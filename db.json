@@ -1,0 +1,42 @@
+{
+    "bg": "https://www.wallpaperflare.com/static/102/209/147/gandalf-the-lord-of-the-rings-wizard-movies-wallpaper.jpg",
+    "title": "Quiz do Senhor dos Anéis",
+    "description": "Teste os seus conhecimentos sobre O Senhor dos Anéis antes que Sauron domine a terra média!!",
+    "questions": [{
+            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+            "title": "Como fazer um seletor por id via CSS?",
+            "description": "Essa é pra aquecer",
+            "answer": 2,
+            "alternatives": [
+                ".elemento",
+                "*elemento",
+                "#elemento",
+                "%elemento"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+            "title": "Como fazer um background gradiente com css?",
+            "description": "Faz tempo em haha",
+            "answer": 0,
+            "alternatives": [
+                "background: linear-gradient(#e66465, #9198e5);",
+                "background: gradient(#e66465, #9198e5);"
+            ]
+        }
+    ],
+    "external": [
+        ""
+    ],
+    "theme": {
+        "colors": {
+            "primary": "#2c3031",
+            "secondary": "#36393a",
+            "mainBg": "#36393a",
+            "contrastText": "#FFFFFF",
+            "wrong": "#FF5722",
+            "success": "#4CAF50"
+        },
+        "borderRadius": "4px"
+    }
+}
