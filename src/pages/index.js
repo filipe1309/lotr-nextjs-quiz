@@ -1,11 +1,11 @@
-import db from '../src/db.json';
-import QuizBackground from '../src/components/QuizBackground'
-import QuizContainer from '../src/components/QuizContainer'
-import QuizLogo from '../src/components/QuizLogo'
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import Head from '../src/components/Head'
-import Widget from '../src/components/Widget'
+import db from '../db.json';
+import QuizBackground from '../components/QuizBackground'
+import QuizContainer from '../components/QuizContainer'
+import QuizLogo from '../components/QuizLogo'
+import Footer from '../components/Footer'
+import GitHubCorner from '../components/GitHubCorner'
+import Head from '../components/Head'
+import Widget from '../components/Widget'
 
 export default function Home() {
   return (
