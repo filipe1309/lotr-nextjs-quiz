@@ -1,6 +1,9 @@
 # LOTR Quiz 🧙
 
 One Quiz to rule them all!! ;)
+
+![Gandalf Laughing](public/gandalf-laughing.gif)
+
 ## About
 This project wad developed during  "Imersão React NextJS V2 - Alura", and used nextjs [style-component](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) example as a base.
 
