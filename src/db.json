@@ -3,25 +3,26 @@
     "title": "Quiz do Senhor dos Anéis",
     "description": "Teste os seus conhecimentos sobre O Senhor dos Anéis antes que Sauron domine a terra média!!",
     "questions": [{
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
+            "image": "https://media.giphy.com/media/8LBDXIEHsVUiI/source.gif",
+            "title": "Como era o nome hobbit do Gollum?",
             "description": "Essa é pra aquecer",
             "answer": 2,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "Bilbo",
+                "Frodo",
+                "Smeagol",
+                "Landral"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
-            "answer": 0,
+            "image": "https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif",
+            "title": "Quantos membros haviam na sociedade do anel?",
+            "description": "basicona tbm haha",
+            "answer": 2,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "5",
+                "10",
+                "9"
             ]
         }
     ],
