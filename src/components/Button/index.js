@@ -31,9 +31,6 @@ const Button = styled(ButtonSubmit)`
     font-weight:300;
     color:#2b302f;
     text-align:center;
-    transition: all 0.2s;
-    animation:bouncy 5s infinite linear;
-    position:relative;
 
 &:hover {
   color:#000000;
@@ -45,22 +42,25 @@ const Button = styled(ButtonSubmit)`
   background-color:#f44336;
 }
 
-@media all and (max-width:30em){
-    display: block;
-    margin:0.4em auto;
+@media all and (max-width:30em) {
+  display: block;
+  margin: 0.4em auto;
 }
 
-& .bouncy {
-  
+&.bouncy {
+  transition: all 0.2s;
+  animation:bouncy 5s infinite linear;
+  position:relative;
 }
+
 @keyframes bouncy {
-  0%{top:0em}
-  40%{top:0em}
-  43%{top:-0.9em}
-  46%{top:0em}
-  48%{top:-0.4em}
-  50%{top:0em}
-  100%{top:0em;}
+  0% { top:0em; }
+  40% { top:0em; }
+  43% { top:-0.9em; }
+  46% { top:0em; }
+  48% { top:-0.4em; }
+  50% { top:0em; }
+  100% { top:0em; }
 }
 `;
 
