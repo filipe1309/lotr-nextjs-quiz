@@ -6,8 +6,12 @@ import QuizLogo from '../components/QuizLogo';
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
 import Widget from '../components/Widget';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState('');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -17,6 +21,23 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
+            <form onSubmit={function (event) {
+              event.preventDefault();
+              router.push(`/quiz?name=${name}`);
+              console.log('aqui!');
+            }}>
+              <input 
+              type="text" 
+                placeholder="Diga seu nome élfico"
+                onChange={function (event) {
+                  // name = event.target.value;
+                  setName(event.target.value);
+                }}
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar {name}
+              </button>
+            </form>
             <p>{db.description}</p>
           </Widget.Content>
         </Widget>
