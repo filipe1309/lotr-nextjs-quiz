@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 function ButtonSubmit({ className, name }) {
   return (
     <button className={className} type="submit" disabled={name.length === 0}>
-      Jogar como: <strong>{name ? name : '??'}</strong>
+      Jogar como:
+      {' '}
+      <strong>{name || '??'}</strong>
     </button>
   );
 }
@@ -24,22 +26,20 @@ const Button = styled(ButtonSubmit)`
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
     margin:10px 0.3em 0.3em 0;
-    border-radius:0.12em;
+    border-radius: ${({ theme }) => theme.borderRadius};
     box-sizing: border-box;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:300;
-    color:#2b302f;
+    color: ${({ theme }) => theme.colors.primary};
     text-align:center;
 
 &:hover {
-  color:#000000;
-  background-color:#4caf50;
+  background-color: ${({ theme }) => theme.colors.success};
 }
 
 &:disabled:hover {
-  color:#000000;
-  background-color:#f44336;
+  background-color: ${({ theme }) => theme.colors.wrong};
 }
 
 @media all and (max-width:30em) {
