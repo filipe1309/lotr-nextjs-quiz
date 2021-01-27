@@ -6,6 +6,8 @@ import QuizLogo from '../components/QuizLogo';
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
 import Widget from '../components/Widget';
+import Button from '../components/Button';
+import Input from '../components/Input';
 import { useRouter } from 'next/router';
 
 export default function Home() {
@@ -26,17 +28,8 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
               console.log('aqui!');
             }}>
-              <input 
-              type="text" 
-                placeholder="Diga seu nome élfico"
-                onChange={function (event) {
-                  // name = event.target.value;
-                  setName(event.target.value);
-                }}
-              />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar {name}
-              </button>
+              <Input placeholder="Diga seu nome élfico" setName={setName}/>
+              <Button className="bouncy" name={name}/>
             </form>
             <p>{db.description}</p>
           </Widget.Content>
