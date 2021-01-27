@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
@@ -8,7 +9,6 @@ import GitHubCorner from '../components/GitHubCorner';
 import Widget from '../components/Widget';
 import Button from '../components/Button';
 import Input from '../components/Input';
-import { useRouter } from 'next/router';
 
 export default function Home() {
   const router = useRouter();
@@ -23,13 +23,21 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (event) {
+            <form onSubmit={(event) => {
               event.preventDefault();
               router.push(`/quiz?name=${name}`);
-              console.log('aqui!');
-            }}>
-              <Input placeholder="Diga seu nome élfico" setName={setName}/>
-              <Button className="bouncy" name={name}/>
+            }}
+            >
+              <Input
+                name="nomeDoUsuario"
+                placeholder="Diga seu nome élfico"
+                autoFocus
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+                value={name}
+              />
+              <Button className="bouncy" name={name} />
             </form>
             <p>{db.description}</p>
           </Widget.Content>
