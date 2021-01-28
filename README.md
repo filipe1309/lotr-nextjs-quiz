@@ -14,7 +14,9 @@ https://site.alura.com.br/imersao-react-next-js/aula01-react-nextjs-aluraquiz
 https://material-ui.com/customization/color/  
 https://fonts.google.com/specimen/Lato?query=lato  
 https://github.com/ijsto/eslint-config
-https://giphy.com/
+https://giphy.com/  
+https://placehold.it/400x400  
+https://lottiefiles.com/23796-ring-of-fire#
 
 ## Commands
 
@@ -34,6 +36,10 @@ yarn eslint:init
 yarn install # to update yarn.lock after eslint init
 
 yarn lint
+
+yarn add prop-types
+
+yarn add lottie-react-web
 ```
 
 ## Structure
