@@ -13,7 +13,7 @@ import ExternalQuizList from '../components/ExternalQuizList';
 
 export default function Home() {
   const router = useRouter();
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState(router.query.name ? router.query.name : '');
 
   return (
     <QuizBackground backgroundImage={db.bg}>
