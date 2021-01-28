@@ -9,6 +9,7 @@ import GitHubCorner from '../components/GitHubCorner';
 import Widget from '../components/Widget';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import ExternalQuizList from '../components/ExternalQuizList';
 
 export default function Home() {
   const router = useRouter();
@@ -48,20 +49,27 @@ export default function Home() {
         </Widget>
 
         <Widget>
-          <Widget.Content>
+          <Widget.Header>
             <h1>Quizes da Galera</h1>
-            {
-              db.external.map((github) => (
-                <a
-                  style={{
-                    color: '#fff', display: 'block', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', margin: '10px 0', padding: '15px', backgroundColor: db.theme.colors.primary,
-                  }}
-                  href={github}
-                >
-                  {github}
-                </a>
-              ))
-            }
+          </Widget.Header>
+          <Widget.Content>
+            <ExternalQuizList>
+              {db.external.map((url) => {
+                const prepareUrl = url
+                  .replace(/\//g, '')
+                  .replace('https:', '')
+                  .replace('.vercel.app', '');
+
+                const [repoName, user] = prepareUrl.split('.');
+                return (
+                  <li key={url}>
+                    <Widget.Topic href={url} data-href={`/quiz/${user}__${repoName}?name=${name}`}>
+                      {`${user}/${repoName}`}
+                    </Widget.Topic>
+                  </li>
+                );
+              })}
+            </ExternalQuizList>
           </Widget.Content>
         </Widget>
         <Footer />
