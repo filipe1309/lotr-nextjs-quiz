@@ -3,7 +3,7 @@ import Widget from '../Widget';
 import Button from '../Button';
 
 function QuestionWidget({
-  question, totalQuestions, questionIndex, onSubmit,
+  question, totalQuestions, questionIndex, onSubmit, addResult,
 }) {
   const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
@@ -36,6 +36,7 @@ function QuestionWidget({
             event.preventDefault();
             setIsQuestionSubmited(true);
             setTimeout(() => {
+              addResult(isCorrect);
               setIsQuestionSubmited(false);
               setSelectedAlternative(undefined);
               onSubmit();
