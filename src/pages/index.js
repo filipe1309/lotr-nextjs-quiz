@@ -50,8 +50,18 @@ export default function Home() {
         <Widget>
           <Widget.Content>
             <h1>Quizes da Galera</h1>
-
-            <p>lorem ipsum dolor sit amet...</p>
+            {
+              db.external.map((github) => (
+                <a
+                  style={{
+                    color: '#fff', display: 'block', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', margin: '10px 0', padding: '15px', backgroundColor: db.theme.colors.primary,
+                  }}
+                  href={github}
+                >
+                  {github}
+                </a>
+              ))
+            }
           </Widget.Content>
         </Widget>
         <Footer />
