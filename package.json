@@ -9,6 +9,7 @@
         "lint": "eslint ./ --fix"
     },
     "dependencies": {
+        "lottie-react-web": "^2.2.2",
         "next": "latest",
         "prop-types": "^15.7.2",
         "react": "^16.8.0",
@@ -21,13 +22,13 @@
         "babel-plugin-styled-components": "^1.8.0",
         "eslint": "^7.18.0",
         "eslint-config-airbnb": "^18.2.1",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-react": "^7.22.0",
-        "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-html": "^5.0.3",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-prettier": "^3.0.1",
+        "eslint-plugin-react": "^7.22.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
         "prettier": "^1.16.4"
     },
     "license": "MIT"

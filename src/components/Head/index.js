@@ -18,6 +18,12 @@ function Head({ title, image, description }) {
       <meta property="og:image:height" content="1080" />
       <meta property="og:type" content="website" />
 
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content="https://lotr-quiz.filipe1309.vercel.app/" />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} />
+
       <meta charSet="utf-8" />
 
       <link rel="canonical" href="https://lotr-quiz.filipe1309.vercel.app/" />
