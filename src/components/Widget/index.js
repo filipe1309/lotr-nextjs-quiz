@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Widget = styled.div`
+const Widget = styled.div `
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -20,7 +20,7 @@ const Widget = styled.div`
   }
 `;
 
-Widget.Header = styled.header`
+Widget.Header = styled.header `
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -32,8 +32,9 @@ Widget.Header = styled.header`
   }
 `;
 
-Widget.Content = styled.div`
+Widget.Content = styled.div `
   padding: 24px 32px 32px 32px;
+  transition: all 0.5s;
   & > *:first-child {
     margin-top: 0;
   }
@@ -46,11 +47,13 @@ Widget.Content = styled.div`
   }
 `;
 
-Widget.Topic = styled.a`
+Widget.Topic = styled.a `
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
-  background-color: ${({ theme }) => `${theme.colors.primary}50`};
+  background-color: ${({ theme }) => `
+$ { theme.colors.primary }
+50 `};
   padding: 10px 15px;
   margin-bottom: 8px;
   cursor: pointer;

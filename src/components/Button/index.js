@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Button = styled.button`
+const Button = styled.button `
     width: 100%;
     margin-top: 10px;
     font-size: 20px;
@@ -9,9 +9,7 @@ const Button = styled.button`
 
     display:block;
     padding:0.35em 1.2em;
-    border:0.1em solid #FFFFFF;
     margin:10px 0.3em 0.3em 0;
-    border-radius: ${({ theme }) => theme.borderRadius};
     box-sizing: border-box;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
@@ -51,8 +49,8 @@ const Button = styled.button`
 `;
 
 Button.propTypes = {
-  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
-  children: PropTypes.node.isRequired,
+    type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Button;
