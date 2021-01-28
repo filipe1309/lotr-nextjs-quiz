@@ -63,10 +63,21 @@ Widget.Topic = styled.a`
     opacity: .5;
   }
 
-  &.alternative-selected {
+  &[data-selected="true"] {
     color: ${({ theme }) => theme.colors.selected};
+    background-color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
     border: 1px solid #fff;
+
+    &[data-status="SUCCESS"] {
+      color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.success};
+    }
+
+    &[data-status="ERROR"] {
+      color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.wrong};
+    }
   }
   input[type="radio"] {
     margin: 0;
