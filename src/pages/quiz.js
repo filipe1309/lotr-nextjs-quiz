@@ -28,6 +28,7 @@ function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit,
 }) {
   const questionId = `question_${questionIndex}`;
+  const [alternativeIdSelected, setAlternativeIdSelected] = React.useState(-1);
 
   return (
     <Widget>
@@ -58,7 +59,16 @@ function QuestionWidget({
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative_${alternativeIndex}`;
             return (
-              <Widget.Topic as="label" htmlFor={alternativeId} key={alternativeId}>
+              <Widget.Topic
+                as="label"
+                htmlFor={alternativeId}
+                key={alternativeId}
+                onClick={() => {
+                  setAlternativeIdSelected(alternativeId);
+                  console.log(alternativeId, alternativeIdSelected);
+                }}
+                className={alternativeId === alternativeIdSelected && 'alternative-selected'}
+              >
                 <input
                   type="radio"
                   id={alternativeId}
