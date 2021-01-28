@@ -50,13 +50,14 @@ function QuestionWidget({
                 htmlFor={alternativeId}
                 key={alternativeId}
                 onChange={() => setSelectedAlternative(alternativeIndex)}
+                className={alternativeIndex === selectedAlternative ? 'alternative-selected' : ''}
               >
                 <input
                   type="radio"
                   id={alternativeId}
                   name={questionId}
                 />
-                <label htmlFor={alternativeId}>{alternative}</label>
+                {alternative}
               </Widget.Topic>
             );
           })}

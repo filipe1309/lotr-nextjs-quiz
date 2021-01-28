@@ -63,9 +63,10 @@ Widget.Topic = styled.a`
     opacity: .5;
   }
 
-  input[type="radio"]:checked+label {
+  &.alternative-selected {
     color: ${({ theme }) => theme.colors.selected};
     font-weight: bold;
+    border: 1px solid #fff;
   }
   input[type="radio"] {
     margin: 0;
