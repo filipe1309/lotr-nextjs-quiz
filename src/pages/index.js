@@ -37,7 +37,11 @@ export default function Home() {
                 }}
                 value={name}
               />
-              <Button className="bouncy" name={name} />
+              <Button type="submit" disabled={name.length === 0}>
+                Jogar como:
+                {' '}
+                <strong>{name || '??'}</strong>
+              </Button>
             </form>
             <p>{db.description}</p>
           </Widget.Content>

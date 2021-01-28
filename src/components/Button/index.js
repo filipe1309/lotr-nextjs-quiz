@@ -1,23 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function ButtonSubmit({ className, name }) {
-  return (
-    <button className={className} type="submit" disabled={name.length === 0}>
-      Jogar como:
-      {' '}
-      <strong>{name || '??'}</strong>
-    </button>
-  );
-}
-
-ButtonSubmit.propTypes = {
-  className: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-};
-
-const Button = styled(ButtonSubmit)`
+const Button = styled.button`
     width: 100%;
     margin-top: 10px;
     font-size: 20px;
@@ -40,6 +24,7 @@ const Button = styled(ButtonSubmit)`
 
 &:disabled:hover {
   background-color: ${({ theme }) => theme.colors.wrong};
+  cursor: not-allowed;
 }
 
 @media all and (max-width:30em) {
@@ -63,5 +48,10 @@ const Button = styled(ButtonSubmit)`
   100% { top:0em; }
 }
 `;
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;
