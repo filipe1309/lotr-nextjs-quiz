@@ -28,7 +28,8 @@
         }
     ],
     "external": [
-        ""
+        "https://imersao-react-next.dayana-sog.vercel.app/",
+        "https://one-piece-quiz.cassiofb-dev.vercel.app/"
     ],
     "theme": {
         "colors": {
@@ -37,7 +38,8 @@
             "mainBg": "#36393a",
             "contrastText": "#FFFFFF",
             "wrong": "#f44336",
-            "success": "#4caf50"
+            "success": "#4caf50",
+            "selected": "#30d3ef"
         },
         "borderRadius": "4px"
     }

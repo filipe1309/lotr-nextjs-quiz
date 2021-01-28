@@ -58,9 +58,13 @@ function QuestionWidget({
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative_${alternativeIndex}`;
             return (
-              <Widget.Topic as="label" htmlFor={alternativeId}>
-                <input type="radio" id={alternativeId} name={questionId} style={{ display: 'none' }} />
-                {alternative}
+              <Widget.Topic as="label" htmlFor={alternativeId} key={alternativeId}>
+                <input
+                  type="radio"
+                  id={alternativeId}
+                  name={questionId}
+                />
+                <label htmlFor={alternativeId}>{alternative}</label>
               </Widget.Topic>
             );
           })}
