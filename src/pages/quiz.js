@@ -8,7 +8,7 @@ import QuizContainer from '../components/QuizContainer';
 import Widget from '../components/Widget';
 import QuizLogo from '../components/QuizLogo';
 import GitHubCorner from '../components/GitHubCorner';
-import Button from '../components/Button';
+import QuestionWidget from '../components/QuestionWidget';
 
 function LoadingWidget() {
   // const urlParams = new URLSearchParams(window.location.search);
@@ -29,62 +29,6 @@ function LoadingWidget() {
             loop: true,
           }}
         />
-      </Widget.Content>
-    </Widget>
-  );
-}
-
-function QuestionWidget({
-  question, totalQuestions, questionIndex, onSubmit,
-}) {
-  const questionId = `question_${questionIndex}`;
-
-  return (
-    <Widget>
-      <Widget.Header>
-        <h1>
-          {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
-        </h1>
-      </Widget.Header>
-      <img
-        src={question.image}
-        alt="Descrição"
-        style={{
-          width: '100%',
-          height: '150px',
-          objectFit: 'cover',
-        }}
-      />
-      <Widget.Content>
-        <h2>{question.title}</h2>
-        <p>{question.description}</p>
-
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            onSubmit();
-          }}
-        >
-          {question.alternatives.map((alternative, alternativeIndex) => {
-            const alternativeId = `alternative_${alternativeIndex}`;
-            return (
-              <Widget.Topic
-                as="label"
-                htmlFor={alternativeId}
-                key={alternativeId}
-              >
-                <input
-                  type="radio"
-                  id={alternativeId}
-                  name={questionId}
-                />
-                <label htmlFor={alternativeId}>{alternative}</label>
-              </Widget.Topic>
-            );
-          })}
-
-          <Button type="submit">Confirmar</Button>
-        </form>
       </Widget.Content>
     </Widget>
   );
