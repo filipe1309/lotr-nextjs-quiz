@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Button = styled.button `
+const Button = styled.button`
     width: 100%;
     margin-top: 10px;
     font-size: 20px;
@@ -16,6 +16,8 @@ const Button = styled.button `
     font-weight:300;
     color: ${({ theme }) => theme.colors.primary};
     text-align:center;
+    border: none;
+    border-radius: ${({ theme }) => theme.borderRadius};
 
 &:hover {
   background-color: ${({ theme }) => theme.colors.success};
@@ -49,8 +51,8 @@ const Button = styled.button `
 `;
 
 Button.propTypes = {
-    type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
-    children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['submit', 'type', 'button']).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Button;
