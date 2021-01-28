@@ -2,6 +2,7 @@
     "bg": "/gandalf.webp",
     "title": "Quiz do Senhor dos Anéis",
     "description": "Teste os seus conhecimentos sobre O Senhor dos Anéis antes que Sauron domine a terra média!!",
+    "github": "https://github.com/filipe1309/lotr-nextjs-quiz",
     "questions": [{
             "image": "https://media.giphy.com/media/8LBDXIEHsVUiI/source.gif",
             "title": "Como era o nome hobbit do Gollum?",

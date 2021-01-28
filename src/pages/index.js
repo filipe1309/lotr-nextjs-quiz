@@ -56,7 +56,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/filipe1309/lotr-nextjs-quiz" />
+      <GitHubCorner projectUrl={db.github} />
     </QuizBackground>
   );
 }
