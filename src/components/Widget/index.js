@@ -64,11 +64,16 @@ Widget.Topic = styled.a`
   }
 
   input[type="radio"]:checked+label {
-    color: ${({ theme }) => theme.colors.selected} !important;
+    color: ${({ theme }) => theme.colors.selected};
+    font-weight: bold;
   }
-  input[type="radio"]{
+  input[type="radio"] {
     margin: 0;
     display: none;
+  }
+
+  label {
+    cursor: pointer;
   }
 `;
 
