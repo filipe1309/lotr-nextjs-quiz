@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Widget from '../Widget';
 // import Lottie from 'lottie-react-web';
 // import animation from '../../loading-ring-of-fire.json';
@@ -42,6 +43,13 @@ function ResultWidget({ results }) {
             loop: true,
           }}
         /> */}
+        <Link href={{
+          pathname: '/',
+          query: { name },
+        }}
+        >
+          Tentar novamente
+        </Link>
       </Widget.Content>
     </Widget>
   );
