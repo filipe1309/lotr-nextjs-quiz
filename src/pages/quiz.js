@@ -1,5 +1,7 @@
 import React from 'react';
+import Lottie from 'lottie-react-web';
 import { useRouter } from 'next/router';
+import animation from '../loading-ring-of-fire.json';
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
@@ -19,7 +21,15 @@ function LoadingWidget() {
       <Widget.Header>
         {`Bem vind@ ${name || '...'}!`}
       </Widget.Header>
-      <Widget.Content> [Desafio do Loading] </Widget.Content>
+      <Widget.Content>
+        <Lottie
+          width="100%"
+          options={{
+            animationData: animation,
+            loop: true,
+          }}
+        />
+      </Widget.Content>
     </Widget>
   );
 }
@@ -28,7 +38,6 @@ function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit,
 }) {
   const questionId = `question_${questionIndex}`;
-  const [alternativeIdSelected, setAlternativeIdSelected] = React.useState(-1);
 
   return (
     <Widget>
@@ -63,11 +72,6 @@ function QuestionWidget({
                 as="label"
                 htmlFor={alternativeId}
                 key={alternativeId}
-                onClick={() => {
-                  setAlternativeIdSelected(alternativeId);
-                  console.log(alternativeId, alternativeIdSelected);
-                }}
-                className={alternativeId === alternativeIdSelected && 'alternative-selected'}
               >
                 <input
                   type="radio"
