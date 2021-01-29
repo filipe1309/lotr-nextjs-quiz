@@ -4,7 +4,7 @@
     "description": "Teste os seus conhecimentos sobre O Senhor dos Anéis antes que Sauron domine a terra média!!",
     "github": "https://github.com/filipe1309/lotr-nextjs-quiz",
     "questions": [{
-            "image": "https://media.giphy.com/media/8LBDXIEHsVUiI/source.gif",
+            "image": "https://media.giphy.com/media/eKdAVlKkv1qSs/source.gif",
             "title": "Como era o nome hobbit do Gollum?",
             "description": "Essa é pra aquecer",
             "answer": 2,
@@ -16,14 +16,50 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif",
+            "image": "https://media.giphy.com/media/YZjHGZdwdBMfS/source.gif",
             "title": "Quantos membros haviam na sociedade do anel?",
-            "description": "basicona tbm haha",
+            "description": "Basicona tbm haha",
             "answer": 2,
             "alternatives": [
                 "5",
                 "10",
                 "9"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/M07QcNxxnX2Eg/source.gif",
+            "title": "Qual o nome da aranha gigante que tentou comer o Frodo?",
+            "description": "Eiiiita, quero ver agora =P",
+            "answer": 1,
+            "alternatives": [
+                "Ungoliant",
+                "Shelob",
+                "Morgoth",
+                "Goliath"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/1I2NwmjvSzNS0/source.gif",
+            "title": "Quantos anéis do poder foram criados?",
+            "description": "A memória está boa aí?",
+            "answer": 3,
+            "alternatives": [
+                "3",
+                "17",
+                "8",
+                "20"
+            ]
+        },
+        {
+            "image": "https://media.giphy.com/media/njYrp176NQsHS/source.gif",
+            "title": "Quantos magos haviam na terra média?",
+            "description": "Só experts sabem esta!! =)",
+            "answer": 1,
+            "alternatives": [
+                "3",
+                "5",
+                "8",
+                "2"
             ]
         }
     ],
