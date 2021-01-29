@@ -15,10 +15,20 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        Resultados
+        <h1>Resultados</h1>
+        {/* https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif */}
       </Widget.Header>
+      <img
+        src="https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif"
+        alt="Descrição"
+        style={{
+          width: '100%',
+          height: '150px',
+          objectFit: 'cover',
+        }}
+      />
       <Widget.Content>
-        <p>
+        <h2>
           {`Parabéns ${name || '...'}!`}
           <br />
           <br />
@@ -28,7 +38,7 @@ function ResultWidget({ results }) {
           <strong>{results.filter((x) => x).length}</strong>
           {' '}
           pergunta(s)
-        </p>
+        </h2>
         <ul>
           {results.map((result, index) => (
             <li key={`result__${index + 1}`}>
@@ -53,6 +63,7 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
+        <br />
         <Link href={{
           pathname: '/',
           query: { name },
