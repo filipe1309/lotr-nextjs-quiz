@@ -7,6 +7,9 @@ const Widget = styled.div`
   background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
   overflow: hidden;
+  z-index:10;
+  position: relative;
+
   h1, h2, h3 {
     font-size: 16px;
     font-weight: 700;
@@ -34,6 +37,7 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  transition: all 0.5s;
   & > *:first-child {
     margin-top: 0;
   }
@@ -63,9 +67,21 @@ Widget.Topic = styled.a`
     opacity: .5;
   }
 
-  input[type="radio"]:checked+label {
+  &[data-selected="true"] {
     color: ${({ theme }) => theme.colors.selected};
+    background-color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
+    border: 1px solid #fff;
+
+    &[data-status="SUCCESS"] {
+      color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.success};
+    }
+
+    &[data-status="ERROR"] {
+      color: ${({ theme }) => theme.colors.primary};
+      background-color: ${({ theme }) => theme.colors.wrong};
+    }
   }
   input[type="radio"] {
     margin: 0;

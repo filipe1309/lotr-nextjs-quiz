@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
+  a {
+    color: ${({ theme }) => theme.colors.selected}
+  }
 `;
 
 const { theme } = db;
@@ -30,11 +33,21 @@ const { theme } = db;
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Head title={db.title} image={db.bg} description={db.description} />
+      <Head
+        title={db.title}
+        image={db.bg}
+        description={db.description}
+      />
+      {' '}
+      { ' ' }
+      {' '}
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
+      {' '}
+      { ' ' }
+
     </>
   );
 }

@@ -1,11 +1,18 @@
 import React from 'react';
+import Lottie from 'lottie-react-web';
 import Widget from '../Widget';
 import Button from '../Button';
+import animation from '../../3-dots-bouncing.json';
+import animationFireworks from '../../fireworks-display.json';
 
 function QuestionWidget({
-  question, totalQuestions, questionIndex, onSubmit,
+  question, totalQuestions, questionIndex, onSubmit, addResult,
 }) {
+  const [selectedAlternative, setSelectedAlternative] = React.useState(undefined);
+  const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
   const questionId = `question_${questionIndex}`;
+  const isCorrect = selectedAlternative === question.answer;
+  const hasSelectedAlternative = selectedAlternative !== undefined;
 
   return (
     <Widget>
@@ -30,28 +37,64 @@ function QuestionWidget({
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            onSubmit();
+            setIsQuestionSubmited(true);
+            setTimeout(() => {
+              addResult(isCorrect);
+              setIsQuestionSubmited(false);
+              setSelectedAlternative(undefined);
+              onSubmit();
+            }, 2 * 1000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative_${alternativeIndex}`;
+            const selectedAlternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
                 as="label"
                 htmlFor={alternativeId}
                 key={alternativeId}
+                onClick={() => setSelectedAlternative(alternativeIndex)}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && selectedAlternativeStatus}
               >
                 <input
                   type="radio"
                   id={alternativeId}
                   name={questionId}
                 />
-                <label htmlFor={alternativeId}>{alternative}</label>
+                {alternative}
               </Widget.Topic>
             );
           })}
 
-          <Button type="submit">Confirmar</Button>
+          <Button type="submit" disabled={!hasSelectedAlternative}>
+            {hasSelectedAlternative && isQuestionSubmited && (
+            <Lottie
+              height="20px"
+              options={{
+                animationData: animation,
+                loop: true,
+              }}
+            />
+            )}
+            {(!hasSelectedAlternative || !isQuestionSubmited) && 'Confirmar'}
+
+          </Button>
+          {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
+          <Lottie
+            style={{
+              position: 'absolute', width: '80%', top: '100px', left: '50px',
+            }}
+            options={{
+              animationData: animationFireworks,
+              loop: true,
+            }}
+          />
+          )}
+          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+          {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
         </form>
       </Widget.Content>
     </Widget>

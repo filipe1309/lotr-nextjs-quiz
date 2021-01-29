@@ -1,11 +1,14 @@
 import React from 'react';
+import Lottie from 'lottie-react-web';
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
 import LoadingWidget from '../components/LoadingWidget';
+import ResultWidget from '../components/ResultWidget';
 import QuizLogo from '../components/QuizLogo';
 import GitHubCorner from '../components/GitHubCorner';
 import QuestionWidget from '../components/QuestionWidget';
+import animationParticles from '../magic-particles.json';
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -15,10 +18,18 @@ const screenStates = {
 
 export default function QuizPage() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
+  const [results, setResults] = React.useState([]);
   const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
+
+  function addResult(result) {
+    setResults([
+      ...results,
+      result,
+    ]);
+  }
 
   // Called one time === didMount
   React.useEffect(() => {
@@ -38,6 +49,15 @@ export default function QuizPage() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Lottie
+        style={{
+          position: 'absolute', width: '50%', top: '0px', left: '30%', zIndex: '1',
+        }}
+        options={{
+          animationData: animationParticles,
+          loop: true,
+        }}
+      />
       <QuizContainer>
         <QuizLogo />
 
@@ -49,10 +69,11 @@ export default function QuizPage() {
             totalQuestions={totalQuestions}
             questionIndex={questionIndex}
             onSubmit={handleSubmitQuiz}
+            addResult={addResult}
           />
         )}
 
-        {screenState === screenStates.RESULT && <div>Resultado: Você acertou X questões</div>}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
 
       </QuizContainer>
       <GitHubCorner projectUrl={db.github} />

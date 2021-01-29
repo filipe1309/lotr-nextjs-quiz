@@ -42,6 +42,11 @@ yarn add prop-types
 yarn add lottie-react-web
 ```
 
+## TO DO
+
+- Musica de fundo
+- Easter egg (Konami Code) - Gandalf DWIT
+
 ## Structure
 
 ```
