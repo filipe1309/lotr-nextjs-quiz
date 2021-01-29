@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Lottie from 'lottie-react-web';
 import Widget from '../Widget';
 import Button from '../Button';
-// import Lottie from 'lottie-react-web';
-// import animation from '../../loading-ring-of-fire.json';
+import animationCheck from '../../check-mark-success.json';
+import animationFail from '../../failure-error-icon.json';
 
 function ResultWidget({ results }) {
   // const urlParams = new URLSearchParams(window.location.search);
@@ -14,14 +15,17 @@ function ResultWidget({ results }) {
   return (
     <Widget>
       <Widget.Header>
-        {`Resultado de ${name || '...'}!`}
+        Resultados
       </Widget.Header>
       <Widget.Content>
         <p>
+          {`Parabéns ${name || '...'}!`}
+          <br />
+          <br />
           Você acertou
           {' '}
           {/* {results.reduce((acc, curr) => acc + (curr ? 1 : 0), 0)} */}
-          {results.filter((x) => x).length}
+          <strong>{results.filter((x) => x).length}</strong>
           {' '}
           pergunta(s)
         </p>
@@ -31,9 +35,21 @@ function ResultWidget({ results }) {
               #0
               {index + 1}
               {' '}
-              Resultado:
-              {' '}
-              {result === true ? 'Acertou' : 'Errou'}
+              <Lottie
+                width="30px"
+                height="30px"
+                style={{
+                  display: 'inline-block',
+                  marginBottom: '-10px',
+                  marginTop: '10px',
+                  // width: result ? '150px' : '50px',
+                  // height: result ? '150px' : '50px',
+                }}
+                options={{
+                  animationData: result ? animationCheck : animationFail,
+                  loop: false,
+                }}
+              />
             </li>
           ))}
         </ul>
