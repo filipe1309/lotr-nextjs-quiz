@@ -1,51 +1,58 @@
-# LOTR Quiz 🧙
+# <p align="center">🧙 LOTR Quiz</p>
 
-One Quiz to rule them all!! ;)
+<p align="center">
+<img src="https://img.shields.io/badge/nextjs-v10-black" />
+<img src="https://img.shields.io/badge/reactjs-16.8.0-blue" />
+<img src="https://img.shields.io/badge/Styles--component-5.0.0-orange"/>
+<img src="https://img.shields.io/badge/vercel-passing-green" />
+</p>
+
+<div align="center">
 
 ![Gandalf Laughing](public/gandalf-laughing.gif)
 
-## About
+<h2>One Quiz to rule them all!!</h2>
+</div>
 
-This project wad developed during "Imersão React NextJS V2 - Alura", and used nextjs [style-component](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) example as a base.
+#
 
-### Some important links
+## 💬 About
 
-https://site.alura.com.br/imersao-react-next-js/aula01-react-nextjs-aluraquiz  
-https://material-ui.com/customization/color/  
-https://fonts.google.com/specimen/Lato?query=lato  
-https://github.com/ijsto/eslint-config
-https://giphy.com/  
-https://placehold.it/400x400  
-https://lottiefiles.com/23796-ring-of-fire#
+This project wad developed during Alura's "Imersão React Next.js", and used nextjs [style-component](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) example as a base.
 
-## Commands
+[Click here to access demo app](https://lotr-quiz.filipe1309.vercel.app/)
+
+## :computer: Technologies
+
+- [Nextjs](https://nextjs.org)
+- [Reactjs](https://pt-br.reactjs.org)
+- [Nodejs](https://nodejs.org/en/)
+- [Styled Components](https://styled-components.com/)
+- [Lottie React Web](https://www.npmjs.com/package/lottie-react-web)
+- [ESlint](https://eslint.org)
+- [Vercel](https://vercel.com/)
+
+## :octocat: Setup
+
+### Installation
 
 ```sh
-npx create-next-app --example with-styled-components dotr-quiz # create project
+# Clone this repo
+git clone git@github.com:filipe1309/lotr-nextjs-quiz.git
 
-yarn dev # Starts the development server.
+# Enter project folder
+cd lotr-nextjs-quiz
 
-yarn build # Builds the app for production.
-
-yarn start # Runs the built app in production mode.
-
-yarn add eslint --dev
-
-yarn eslint:init
-
-yarn install # to update yarn.lock after eslint init
-
-yarn lint
-
-yarn add prop-types
-
-yarn add lottie-react-web
+# Intall dependencies
+yarn
 ```
 
-## TO DO
+### Runnning
 
-- Musica de fundo
-- Easter egg (Konami Code) - Gandalf DWIT
+```sh
+yarn dev
+# app will run at: http://localhost:3000
+```
 
 ## Structure
 
@@ -72,3 +79,14 @@ yarn add lottie-react-web
  ┃ ┗ 📜_document.js
  ┗ 📜db.json
 ```
+
+## About Me
+
+<a style="font-weight: bold" href="https://www.linkedin.com/in/filipe1309/">
+ <img style="border-radius:50%" width="100px; "src="https://avatars.githubusercontent.com/u/2081014?s=60&v=4"/>
+ <p>Filipe Leuch Bonfim</p>
+</a>
+
+---
+
+Done with ♥ by <a style="font-weight: bold" href="https://www.linkedin.com/in/filipe1309/">Filipe Leuch Bonfim</a> 🖖
