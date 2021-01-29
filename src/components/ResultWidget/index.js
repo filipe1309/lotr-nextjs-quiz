@@ -11,15 +11,18 @@ function ResultWidget({ results }) {
   // const name = urlParams.get('name');
   const router = useRouter();
   const { name } = router.query;
+  const numberOfCorrectAnswers = results.filter((x) => x).length;
+  const imageByPercentOfCorrectAnswers = ((numberOfCorrectAnswers / results.length) > 0.5)
+    ? 'https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif'
+    : 'https://media.giphy.com/media/chICfOgH8ib16/source.gif';
 
   return (
     <Widget>
       <Widget.Header>
         <h1>Resultados</h1>
-        {/* https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif */}
       </Widget.Header>
       <img
-        src="https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif"
+        src={imageByPercentOfCorrectAnswers}
         alt="Descrição"
         style={{
           width: '100%',
@@ -35,7 +38,7 @@ function ResultWidget({ results }) {
           Você acertou
           {' '}
           {/* {results.reduce((acc, curr) => acc + (curr ? 1 : 0), 0)} */}
-          <strong>{results.filter((x) => x).length}</strong>
+          <strong>{numberOfCorrectAnswers}</strong>
           {' '}
           pergunta(s)
         </h2>
@@ -52,8 +55,6 @@ function ResultWidget({ results }) {
                   display: 'inline-block',
                   marginBottom: '-10px',
                   marginTop: '10px',
-                  // width: result ? '150px' : '50px',
-                  // height: result ? '150px' : '50px',
                 }}
                 options={{
                   animationData: result ? animationCheck : animationFail,
