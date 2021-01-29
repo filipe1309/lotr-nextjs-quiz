@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Widget from '../Widget';
+import Button from '../Button';
 // import Lottie from 'lottie-react-web';
 // import animation from '../../loading-ring-of-fire.json';
 
@@ -26,7 +27,7 @@ function ResultWidget({ results }) {
         </p>
         <ul>
           {results.map((result, index) => (
-            <li key={`result__${result}`}>
+            <li key={`result__${index + 1}`}>
               #0
               {index + 1}
               {' '}
@@ -36,19 +37,12 @@ function ResultWidget({ results }) {
             </li>
           ))}
         </ul>
-        {/* <Lottie
-          width="100%"
-          options={{
-            animationData: animation,
-            loop: true,
-          }}
-        /> */}
         <Link href={{
           pathname: '/',
           query: { name },
         }}
         >
-          Tentar novamente
+          <Button type="button">Tentar novamente</Button>
         </Link>
       </Widget.Content>
     </Widget>

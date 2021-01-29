@@ -2,22 +2,23 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Button = styled.button`
-    width: 100%;
-    margin-top: 10px;
-    font-size: 20px;
-    cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
 
-    display:block;
-    padding:0.35em 1.2em;
-    margin:10px 0.3em 0.3em 0;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:300;
-    color: ${({ theme }) => theme.colors.primary};
-    text-align:center;
-    border: none;
-    border-radius: ${({ theme }) => theme.borderRadius};
+  display:block;
+  padding:0.35em 1.2em;
+  margin:10px 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color: ${({ theme }) => theme.colors.primary};
+  text-align:center;
+  border: none;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  outline: none;
 
 &:hover {
   background-color: ${({ theme }) => theme.colors.success};

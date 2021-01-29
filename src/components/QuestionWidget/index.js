@@ -1,6 +1,8 @@
 import React from 'react';
+import Lottie from 'lottie-react-web';
 import Widget from '../Widget';
 import Button from '../Button';
+import animation from '../../3-dots-bouncing.json';
 
 function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit, addResult,
@@ -52,7 +54,7 @@ function QuestionWidget({
                 as="label"
                 htmlFor={alternativeId}
                 key={alternativeId}
-                onChange={() => setSelectedAlternative(alternativeIndex)}
+                onClick={() => setSelectedAlternative(alternativeIndex)}
                 data-selected={isSelected}
                 data-status={isQuestionSubmited && selectedAlternativeStatus}
               >
@@ -66,7 +68,19 @@ function QuestionWidget({
             );
           })}
 
-          <Button type="submit" disabled={!hasSelectedAlternative}>Confirmar</Button>
+          <Button type="submit" disabled={!hasSelectedAlternative}>
+            {hasSelectedAlternative && isQuestionSubmited && (
+            <Lottie
+              height="20px"
+              options={{
+                animationData: animation,
+                loop: true,
+              }}
+            />
+            )}
+            {(!hasSelectedAlternative || !isQuestionSubmited) && 'Confirmar'}
+
+          </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
         </form>
