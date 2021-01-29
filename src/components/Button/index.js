@@ -20,7 +20,7 @@ const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius};
   outline: none;
 
-&:hover {
+&.bouncy:hover {
   background-color: ${({ theme }) => theme.colors.success};
 }
 
