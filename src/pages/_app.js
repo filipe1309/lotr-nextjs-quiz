@@ -38,16 +38,10 @@ export default function App({ Component, pageProps }) {
         image={db.bg}
         description={db.description}
       />
-      {' '}
-      { ' ' }
-      {' '}
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
-      {' '}
-      { ' ' }
-
     </>
   );
 }
