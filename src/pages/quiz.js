@@ -1,4 +1,5 @@
 import React from 'react';
+import Lottie from 'lottie-react-web';
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
@@ -7,6 +8,7 @@ import ResultWidget from '../components/ResultWidget';
 import QuizLogo from '../components/QuizLogo';
 import GitHubCorner from '../components/GitHubCorner';
 import QuestionWidget from '../components/QuestionWidget';
+import animationParticles from '../magic-particles.json';
 
 const screenStates = {
   QUIZ: 'QUIZ',
@@ -47,6 +49,15 @@ export default function QuizPage() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Lottie
+        style={{
+          position: 'absolute', width: '50%', top: '0px', left: '30%', zIndex: '1',
+        }}
+        options={{
+          animationData: animationParticles,
+          loop: true,
+        }}
+      />
       <QuizContainer>
         <QuizLogo />
 

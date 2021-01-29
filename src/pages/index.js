@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Lottie from 'lottie-react-web';
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
@@ -10,6 +11,7 @@ import Widget from '../components/Widget';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import ExternalQuizList from '../components/ExternalQuizList';
+import animationParticles from '../magic-particles.json';
 
 export default function Home() {
   const router = useRouter();
@@ -17,6 +19,15 @@ export default function Home() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Lottie
+        style={{
+          position: 'absolute', width: '50%', top: '0px', left: '30%', zIndex: '1',
+        }}
+        options={{
+          animationData: animationParticles,
+          loop: true,
+        }}
+      />
       <QuizContainer>
         <QuizLogo />
         <Widget>
