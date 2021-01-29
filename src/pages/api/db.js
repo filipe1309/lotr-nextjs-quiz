@@ -11,5 +11,7 @@ export default function dbHandler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
 
+  db.bg = 'https://wallpaperset.com/w/full/8/a/b/208233.jpg';
+
   res.json(db);
 }
