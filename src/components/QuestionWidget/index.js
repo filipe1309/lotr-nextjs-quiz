@@ -3,6 +3,7 @@ import Lottie from 'lottie-react-web';
 import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
+import animationFireworks from '../../fireworks-display.json';
 
 function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit, addResult,
@@ -81,7 +82,17 @@ function QuestionWidget({
             {(!hasSelectedAlternative || !isQuestionSubmited) && 'Confirmar'}
 
           </Button>
-          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+          {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
+          <Lottie
+            style={{
+              position: 'absolute', width: '50%', top: '0px', left: '0px',
+            }}
+            options={{
+              animationData: animationFireworks,
+              loop: true,
+            }}
+          />
+          )}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
         </form>
       </Widget.Content>
