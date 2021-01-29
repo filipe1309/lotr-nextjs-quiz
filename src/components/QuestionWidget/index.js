@@ -85,7 +85,7 @@ function QuestionWidget({
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
           <Lottie
             style={{
-              position: 'absolute', width: '50%', top: '0px', left: '0px',
+              position: 'absolute', width: '80%', top: '100px', left: '50px',
             }}
             options={{
               animationData: animationFireworks,
@@ -93,6 +93,7 @@ function QuestionWidget({
             }}
           />
           )}
+          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
         </form>
       </Widget.Content>
