@@ -21,6 +21,15 @@ export default function Home() {
   const [name, setName] = React.useState(router.query.name ? router.query.name : '');
   const hasName = !(name.length === 0);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const audio = document.getElementById('lotr-main');
+    audio.loop = true;
+    audio.load();
+    audio.play();
+    router.push(`/quiz?name=${name}`);
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <div className="lottie-animation index">
@@ -48,11 +57,7 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={(event) => {
-              event.preventDefault();
-              router.push(`/quiz?name=${name}`);
-            }}
-            >
+            <form onSubmit={handleSubmit}>
               <Input
                 name="nomeDoUsuario"
                 placeholder="Diga seu nome élfico"
@@ -98,7 +103,7 @@ export default function Home() {
                   <li key={url}>
                     <Widget.Topic
                       as={Link}
-                      href={hasName ? `/quiz/${user}___${repoName}?name=${name}` : '#'}
+                      href={hasName ? `/quiz/${user}___${repoName}?name=${name}` : '/'}
                       style={{ opacity: hasName ? 'unset' : 0.5, cursor: hasName ? 'pointer' : 'not-allowed' }}
                     >
                       {`${user}/${repoName}`}

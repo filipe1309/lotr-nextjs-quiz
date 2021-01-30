@@ -58,6 +58,10 @@ export default function App({ Component, pageProps }) {
         image={db.bg}
         description={db.description}
       />
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio id="lotr-main">
+        <source src="/lotr_main.ogg" type="audio/ogg" />
+      </audio>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
