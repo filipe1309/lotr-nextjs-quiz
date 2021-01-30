@@ -74,7 +74,7 @@ export default function QuizPage({ questions, backgound }) {
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
 
       </QuizContainer>
-      <GitHubCorner projectUrl="asd" />
+      <GitHubCorner projectUrl="https://github.com/filipe1309/lotr-nextjs-quiz" />
     </QuizBackground>
   );
 }
