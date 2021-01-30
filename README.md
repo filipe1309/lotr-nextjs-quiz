@@ -18,6 +18,12 @@
 
 This project wad developed during Alura's "Imersão React Next.js", and used nextjs [style-component](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) example as a base.
 
+<div align="center">
+
+![LOTR index](public/lotr-index.gif)
+
+</div>
+
 [Click here to access demo app](https://lotr-quiz.filipe1309.vercel.app/)
 
 ## :computer: Technologies
