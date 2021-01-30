@@ -4,6 +4,7 @@ import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
 import animationFireworks from '../../fireworks-display.json';
+import animationFeathers from '../../falling-feathers.json';
 import BackLinkArrow from '../BackLinkArrow';
 
 function QuestionWidget({
@@ -84,11 +85,21 @@ function QuestionWidget({
             {(!hasSelectedAlternative || !isQuestionSubmited) && 'Confirmar'}
 
           </Button>
-          {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
+          {isQuestionSubmited && isCorrect && (
           <div className="lottie-animation question">
             <Lottie
               options={{
                 animationData: animationFireworks,
+                loop: true,
+              }}
+            />
+          </div>
+          )}
+          {isQuestionSubmited && !isCorrect && (
+          <div className="lottie-animation question">
+            <Lottie
+              options={{
+                animationData: animationFeathers,
                 loop: true,
               }}
             />
