@@ -8,7 +8,8 @@ https://fonts.google.com/specimen/Lato?query=lato
 https://github.com/ijsto/eslint-config
 https://giphy.com/  
 https://placehold.it/400x400  
-https://lottiefiles.com/23796-ring-of-fire#
+https://lottiefiles.com/23796-ring-of-fire#  
+https://httpstatusdogs.com/
 
 ### Commnads
 
@@ -32,6 +33,8 @@ yarn lint
 yarn add prop-types
 
 yarn add lottie-react-web
+
+yarn add framer-motion
 ```
 
 ## TO DO
@@ -40,3 +43,4 @@ yarn add lottie-react-web
 - Musica de fundo
 - Easter egg (Konami Code) - Gandalf DWIT
 - Trocar gifs esternos por locais
+- desabilitar quizes da galera se não tiver nome na index

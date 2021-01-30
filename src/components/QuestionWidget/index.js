@@ -1,9 +1,12 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
+import { useRouter } from 'next/router';
 import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
 import animationFireworks from '../../fireworks-display.json';
+import animationFeathers from '../../falling-feathers.json';
+import BackLinkArrow from '../BackLinkArrow';
 
 function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit, addResult,
@@ -13,10 +16,17 @@ function QuestionWidget({
   const questionId = `question_${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasSelectedAlternative = selectedAlternative !== undefined;
+  const router = useRouter();
+  const { name } = router.query;
 
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href={{
+          pathname: '/',
+          query: { name },
+        }}
+        />
         <h1>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h1>
@@ -82,11 +92,21 @@ function QuestionWidget({
             {(!hasSelectedAlternative || !isQuestionSubmited) && 'Confirmar'}
 
           </Button>
-          {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
+          {isQuestionSubmited && isCorrect && (
           <div className="lottie-animation question">
             <Lottie
               options={{
                 animationData: animationFireworks,
+                loop: true,
+              }}
+            />
+          </div>
+          )}
+          {isQuestionSubmited && !isCorrect && (
+          <div className="lottie-animation question">
+            <Lottie
+              options={{
+                animationData: animationFeathers,
                 loop: true,
               }}
             />

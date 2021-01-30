@@ -14,8 +14,6 @@
 <h2>One Quiz to rule them all!!</h2>
 </div>
 
-#
-
 ## 💬 About
 
 This project wad developed during Alura's "Imersão React Next.js", and used nextjs [style-component](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components) example as a base.
@@ -30,6 +28,7 @@ This project wad developed during Alura's "Imersão React Next.js", and used nex
 - [Styled Components](https://styled-components.com/)
 - [Lottie React Web](https://www.npmjs.com/package/lottie-react-web)
 - [ESlint](https://eslint.org)
+- [Framer Motion](https://www.framer.com/motion/)
 - [Vercel](https://vercel.com/)
 
 ## :octocat: Setup

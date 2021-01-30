@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Lottie from 'lottie-react-web';
+import { motion } from 'framer-motion';
+
 import db from '../db.json';
 import QuizBackground from '../components/QuizBackground';
 import QuizContainer from '../components/QuizContainer';
@@ -12,10 +14,12 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import ExternalQuizList from '../components/ExternalQuizList';
 import animationParticles from '../magic-particles.json';
+import Link from '../components/Link';
 
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState(router.query.name ? router.query.name : '');
+  const hasName = !(name.length === 0);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -30,7 +34,16 @@ export default function Home() {
 
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: '100%' },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
@@ -49,7 +62,7 @@ export default function Home() {
                 }}
                 value={name}
               />
-              <Button className="bouncy" type="submit" disabled={name.length === 0}>
+              <Button className="bouncy" type="submit" disabled={!hasName}>
                 Jogar como:
                 {' '}
                 <strong>{name || '??'}</strong>
@@ -59,7 +72,16 @@ export default function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+          as={motion.section}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Widget.Header>
             <h1>Quizes da Galera</h1>
           </Widget.Header>
@@ -74,7 +96,11 @@ export default function Home() {
                 const [repoName, user] = prepareUrl.split('.');
                 return (
                   <li key={url}>
-                    <Widget.Topic href={url} data-href={`/quiz/${user}__${repoName}?name=${name}`}>
+                    <Widget.Topic
+                      as={Link}
+                      href={hasName ? `/quiz/${user}___${repoName}?name=${name}` : '#'}
+                      style={{ opacity: hasName ? 'unset' : 0.5, cursor: hasName ? 'pointer' : 'not-allowed' }}
+                    >
                       {`${user}/${repoName}`}
                     </Widget.Topic>
                   </li>
@@ -83,7 +109,16 @@ export default function Home() {
             </ExternalQuizList>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer
+          as={motion.footer}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </QuizContainer>
       <GitHubCorner projectUrl={db.github} />
     </QuizBackground>
