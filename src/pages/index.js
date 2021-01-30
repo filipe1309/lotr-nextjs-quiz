@@ -12,6 +12,7 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import ExternalQuizList from '../components/ExternalQuizList';
 import animationParticles from '../magic-particles.json';
+import Link from '../components/Link';
 
 export default function Home() {
   const router = useRouter();
@@ -74,7 +75,7 @@ export default function Home() {
                 const [repoName, user] = prepareUrl.split('.');
                 return (
                   <li key={url}>
-                    <Widget.Topic href={`/quiz/${user}___${repoName}?name=${name}`}>
+                    <Widget.Topic as={Link} href={`/quiz/${user}___${repoName}?name=${name}`}>
                       {`${user}/${repoName}`}
                     </Widget.Topic>
                   </li>
