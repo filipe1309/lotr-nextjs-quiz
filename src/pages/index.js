@@ -19,6 +19,7 @@ import Link from '../components/Link';
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState(router.query.name ? router.query.name : '');
+  const hasName = !(name.length === 0);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -61,7 +62,7 @@ export default function Home() {
                 }}
                 value={name}
               />
-              <Button className="bouncy" type="submit" disabled={name.length === 0}>
+              <Button className="bouncy" type="submit" disabled={!hasName}>
                 Jogar como:
                 {' '}
                 <strong>{name || '??'}</strong>
@@ -95,7 +96,11 @@ export default function Home() {
                 const [repoName, user] = prepareUrl.split('.');
                 return (
                   <li key={url}>
-                    <Widget.Topic as={Link} href={`/quiz/${user}___${repoName}?name=${name}`}>
+                    <Widget.Topic
+                      as={Link}
+                      href={hasName ? `/quiz/${user}___${repoName}?name=${name}` : '#'}
+                      style={{ opacity: hasName ? 'unset' : 0.5, cursor: hasName ? 'pointer' : 'not-allowed' }}
+                    >
                       {`${user}/${repoName}`}
                     </Widget.Topic>
                   </li>
