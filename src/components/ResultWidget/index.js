@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Lottie from 'lottie-react-web';
 import { motion } from 'framer-motion';
+import { TwitterShareButton, TwitterIcon } from 'react-share';
 import Widget from '../Widget';
 import Button from '../Button';
 import animationCheck from '../../animations/check-mark-success.json';
@@ -12,6 +13,7 @@ function ResultWidget({ results }) {
   // const name = urlParams.get('name');
   const router = useRouter();
   const { name } = router.query;
+  const numberOfAnswers = results.length;
   const numberOfCorrectAnswers = results.filter((x) => x).length;
   const imageByPercentOfCorrectAnswers = ((numberOfCorrectAnswers / results.length) > 0.5)
     ? 'https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif'
@@ -91,6 +93,17 @@ function ResultWidget({ results }) {
         >
           <Button type="button">Tentar novamente</Button>
         </Link>
+        <div style={{ textAlign: 'center', marginTop: '25px' }}>
+          <TwitterShareButton
+            url="https://lotr-quiz.filipe1309.vercel.app/"
+            title={`Yay!!, i completed the LOTR Quiz and got ${numberOfCorrectAnswers} of ${numberOfAnswers} questions right, try also at: `}
+            via="filipe1309 @omariosouto @paulo_caelum @AluraOnline @rauchg"
+            hashtags={['nextjs', 'reactjs', 'alura', 'imersaoreact', 'aluraquiz', 'lotr']}
+            related={['@filipe1309', 'omariosouto', 'paulo_caelum', 'AluraOnline', 'rauchg']}
+          >
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+        </div>
       </Widget.Content>
     </Widget>
   );
