@@ -1,14 +1,14 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
-import db from '../db.json';
-import QuizBackground from '../components/QuizBackground';
-import QuizContainer from '../components/QuizContainer';
-import LoadingWidget from '../components/LoadingWidget';
-import ResultWidget from '../components/ResultWidget';
-import QuizLogo from '../components/QuizLogo';
-import GitHubCorner from '../components/GitHubCorner';
-import QuestionWidget from '../components/QuestionWidget';
-import animationParticles from '../magic-particles.json';
+import db from '../../db.json';
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import LoadingWidget from '../../components/LoadingWidget';
+import ResultWidget from '../../components/ResultWidget';
+import QuizLogo from '../../components/QuizLogo';
+import GitHubCorner from '../../components/GitHubCorner';
+import QuestionWidget from '../../components/QuestionWidget';
+import animationParticles from '../../magic-particles.json';
 
 const screenStates = {
   QUIZ: 'QUIZ',
