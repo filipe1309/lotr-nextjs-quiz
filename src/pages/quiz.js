@@ -49,15 +49,14 @@ export default function QuizPage() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Lottie
-        style={{
-          position: 'absolute', width: '50%', top: '0px', left: '30%', zIndex: '1',
-        }}
-        options={{
-          animationData: animationParticles,
-          loop: true,
-        }}
-      />
+      <div className="lottie-animation index">
+        <Lottie
+          options={{
+            animationData: animationParticles,
+            loop: true,
+          }}
+        />
+      </div>
       <QuizContainer>
         <QuizLogo />
 

@@ -44,23 +44,32 @@ function ResultWidget({ results }) {
         </h2>
         <ul>
           {results.map((result, index) => (
-            <li key={`result__${index + 1}`}>
-              #0
-              {index + 1}
-              {' '}
-              <Lottie
-                width="30px"
-                height="30px"
-                style={{
-                  display: 'inline-block',
-                  marginBottom: '-10px',
-                  marginTop: '10px',
-                }}
-                options={{
-                  animationData: result ? animationCheck : animationFail,
-                  loop: false,
-                }}
-              />
+            <li
+              key={`result__${index + 1}`}
+              style={{
+                padding: '5px',
+                margin: '5px',
+                backgroundColor: '#2c3031',
+                borderRadius: '4px',
+                height: '40px',
+                textAlign: 'center',
+              }}
+            >
+              <span className="quention-index" style={{ fontSize: '20px' }}>
+                #0
+                {index + 1}
+                {' '}
+              </span>
+              <div className="lottie-animation result">
+                <Lottie
+                  width="30px"
+                  height="30px"
+                  options={{
+                    animationData: result ? animationCheck : animationFail,
+                    loop: false,
+                  }}
+                />
+              </div>
             </li>
           ))}
         </ul>

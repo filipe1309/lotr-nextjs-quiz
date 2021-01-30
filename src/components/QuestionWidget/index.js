@@ -83,15 +83,14 @@ function QuestionWidget({
 
           </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p> && (
-          <Lottie
-            style={{
-              position: 'absolute', width: '80%', top: '100px', left: '50px',
-            }}
-            options={{
-              animationData: animationFireworks,
-              loop: true,
-            }}
-          />
+          <div className="lottie-animation question">
+            <Lottie
+              options={{
+                animationData: animationFireworks,
+                loop: true,
+              }}
+            />
+          </div>
           )}
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}

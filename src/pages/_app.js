@@ -26,6 +26,26 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.colors.selected}
   }
+
+  .lottie-animation {
+    position: absolute;
+  }
+
+  .lottie-animation.index {
+    width: 50%;
+    top: 30%;
+    left: 30%;
+    z-index: 1;
+  }
+  .lottie-animation.question {
+    width: 80%;
+    top: 200px;
+    left: 50px;
+  }
+
+  .lottie-animation.result {
+    display: inline-block;
+  }
 `;
 
 const { theme } = db;
