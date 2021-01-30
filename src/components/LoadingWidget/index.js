@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react-web';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import animation from '../../loading-ring-of-fire.json';
+import animationLoading from '../../animations/loading-ring-of-fire.json';
 import Widget from '../Widget';
 
 function LoadingWidget() {
@@ -28,7 +28,7 @@ function LoadingWidget() {
         <Lottie
           width="100%"
           options={{
-            animationData: animation,
+            animationData: animationLoading,
             loop: true,
           }}
         />

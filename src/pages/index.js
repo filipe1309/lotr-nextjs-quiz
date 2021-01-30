@@ -13,7 +13,7 @@ import Widget from '../components/Widget';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import ExternalQuizList from '../components/ExternalQuizList';
-import animationParticles from '../magic-particles.json';
+import animationParticles from '../animations/magic-particles.json';
 import Link from '../components/Link';
 
 export default function Home() {

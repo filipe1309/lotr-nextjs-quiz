@@ -4,9 +4,9 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Widget from '../Widget';
 import Button from '../Button';
-import animation from '../../3-dots-bouncing.json';
-import animationFireworks from '../../fireworks-display.json';
-import animationFeathers from '../../falling-feathers.json';
+import animationDots from '../../animations/3-dots-bouncing.json';
+import animationFireworks from '../../animations/fireworks-display.json';
+import animationFeathers from '../../animations/falling-feathers.json';
 import BackLinkArrow from '../BackLinkArrow';
 
 function QuestionWidget({
@@ -94,7 +94,7 @@ function QuestionWidget({
             <Lottie
               height="20px"
               options={{
-                animationData: animation,
+                animationData: animationDots,
                 loop: true,
               }}
             />

@@ -8,7 +8,7 @@ import ResultWidget from '../../components/ResultWidget';
 import QuizLogo from '../../components/QuizLogo';
 import GitHubCorner from '../../components/GitHubCorner';
 import QuestionWidget from '../../components/QuestionWidget';
-import animationParticles from '../../magic-particles.json';
+import animationParticles from '../../animations/magic-particles.json';
 
 const screenStates = {
   QUIZ: 'QUIZ',

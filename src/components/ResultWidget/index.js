@@ -4,8 +4,8 @@ import Lottie from 'lottie-react-web';
 import { motion } from 'framer-motion';
 import Widget from '../Widget';
 import Button from '../Button';
-import animationCheck from '../../check-mark-success.json';
-import animationFail from '../../failure-error-icon.json';
+import animationCheck from '../../animations/check-mark-success.json';
+import animationFail from '../../animations/failure-error-icon.json';
 
 function ResultWidget({ results }) {
   // const urlParams = new URLSearchParams(window.location.search);
