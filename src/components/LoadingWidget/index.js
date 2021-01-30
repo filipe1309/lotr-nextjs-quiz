@@ -1,5 +1,6 @@
 import Lottie from 'lottie-react-web';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import animation from '../../loading-ring-of-fire.json';
 import Widget from '../Widget';
 
@@ -10,7 +11,16 @@ function LoadingWidget() {
   const { name } = router.query;
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.3 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         {`Bem vind@ ${name || '...'}!`}
       </Widget.Header>

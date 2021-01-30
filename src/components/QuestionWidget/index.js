@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
@@ -20,7 +21,16 @@ function QuestionWidget({
   const { name } = router.query;
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.3 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <BackLinkArrow href={{
           pathname: '/',

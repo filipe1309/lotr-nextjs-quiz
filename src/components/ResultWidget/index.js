@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Lottie from 'lottie-react-web';
+import { motion } from 'framer-motion';
 import Widget from '../Widget';
 import Button from '../Button';
 import animationCheck from '../../check-mark-success.json';
@@ -17,7 +18,16 @@ function ResultWidget({ results }) {
     : 'https://media.giphy.com/media/chICfOgH8ib16/source.gif';
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.3 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <h1>Resultados</h1>
       </Widget.Header>
