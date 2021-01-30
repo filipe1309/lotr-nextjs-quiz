@@ -25,5 +25,5 @@ export default function BackLinkArrow({ href }) {
 }
 
 BackLinkArrow.propTypes = {
-  href: PropTypes.string.isRequired,
+  href: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 };
