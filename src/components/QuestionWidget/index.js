@@ -4,6 +4,7 @@ import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
 import animationFireworks from '../../fireworks-display.json';
+import BackLinkArrow from '../BackLinkArrow';
 
 function QuestionWidget({
   question, totalQuestions, questionIndex, onSubmit, addResult,
@@ -17,6 +18,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h1>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h1>
