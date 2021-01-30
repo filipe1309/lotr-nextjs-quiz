@@ -1,5 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react-web';
+import { useRouter } from 'next/router';
 import Widget from '../Widget';
 import Button from '../Button';
 import animation from '../../3-dots-bouncing.json';
@@ -15,11 +16,17 @@ function QuestionWidget({
   const questionId = `question_${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasSelectedAlternative = selectedAlternative !== undefined;
+  const router = useRouter();
+  const { name } = router.query;
 
   return (
     <Widget>
       <Widget.Header>
-        <BackLinkArrow href="/" />
+        <BackLinkArrow href={{
+          pathname: '/',
+          query: { name },
+        }}
+        />
         <h1>
           {`Pergunta ${questionIndex + 1} de ${totalQuestions}`}
         </h1>
