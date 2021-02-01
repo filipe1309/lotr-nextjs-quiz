@@ -52,12 +52,20 @@ cd lotr-nextjs-quiz
 yarn
 ```
 
-### Runnning
+### 🏃 Runnning
 
 ```sh
 yarn dev
 # app will run at: http://localhost:3000
 ```
+
+#### Local
+
+http://localhost:3000
+
+#### API
+
+http://localhost:3000/api/db
 
 ## Structure
 
