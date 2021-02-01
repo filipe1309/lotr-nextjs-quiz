@@ -48,7 +48,7 @@ git clone git@github.com:filipe1309/lotr-nextjs-quiz.git
 # Enter project folder
 cd lotr-nextjs-quiz
 
-# Intall dependencies
+# Install dependencies
 yarn
 ```
 
