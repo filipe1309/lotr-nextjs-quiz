@@ -4,7 +4,7 @@
     "description": "Teste os seus conhecimentos sobre O Senhor dos Anéis antes que Sauron domine a terra média!!",
     "github": "https://github.com/filipe1309/lotr-nextjs-quiz",
     "questions": [{
-            "image": "https://media.giphy.com/media/eKdAVlKkv1qSs/source.gif",
+            "image": "/questions/smeagol.gif",
             "title": "Como era o nome hobbit do Gollum?",
             "description": "Essa é pra aquecer",
             "answer": 2,
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/YZjHGZdwdBMfS/source.gif",
+            "image": "/questions/hobbits-drinking.gif",
             "title": "Quantos membros haviam na sociedade do anel?",
             "description": "Basicona tbm haha",
             "answer": 2,
@@ -27,7 +27,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/M07QcNxxnX2Eg/source.gif",
+            "image": "/questions/frodo-bad.gif",
             "title": "Qual o nome da aranha gigante que tentou comer o Frodo?",
             "description": "Eiiiita, quero ver agora =P",
             "answer": 1,
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/1I2NwmjvSzNS0/source.gif",
+            "image": "/questions/one-ring.gif",
             "title": "Quantos anéis do poder foram criados?",
             "description": "A memória está boa aí?",
             "answer": 3,
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "image": "https://media.giphy.com/media/8abAbOrQ9rvLG/source.gif",
+            "image": "/questions/gandalf-ysnp.gif",
             "title": "Quantos magos haviam na terra média?",
             "description": "Só experts sabem esta!! =)",
             "answer": 1,
