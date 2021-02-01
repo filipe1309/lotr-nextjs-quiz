@@ -16,8 +16,8 @@ function ResultWidget({ results }) {
   const numberOfAnswers = results.length;
   const numberOfCorrectAnswers = results.filter((x) => x).length;
   const imageByPercentOfCorrectAnswers = ((numberOfCorrectAnswers / results.length) > 0.5)
-    ? 'https://media.giphy.com/media/zGnnFpOB1OjMQ/source.gif'
-    : 'https://media.giphy.com/media/chICfOgH8ib16/source.gif';
+    ? '/questions/hobbbits-applauding.gif'
+    : '/questions/gollum-confused.gif';
 
   return (
     <Widget
