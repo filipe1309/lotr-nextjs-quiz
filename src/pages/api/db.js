@@ -13,11 +13,12 @@ export default function dbHandler(req, res) {
 
   // Remap local images, to allow ohers to use
   const { host } = req.headers;
-  db.bg = host + db.bg;
+  const protocol = req.protocol ? (`${req.protocol}://`) : 'http://';
+  db.bg = protocol + host + db.bg;
 
   db.questions.map((question) => {
     // eslint-disable-next-line no-param-reassign
-    question.image = host + question.image;
+    question.image = protocol + host + question.image;
     return question;
   });
 
