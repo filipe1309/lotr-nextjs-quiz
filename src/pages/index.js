@@ -23,10 +23,9 @@ export default function Home() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const audio = document.getElementById('lotr-main');
-    audio.loop = true;
-    audio.load();
-    audio.play();
+    const lotrAudio = new Audio('/lotr_main.ogg');
+    lotrAudio.loop = true;
+    lotrAudio.play();
     router.push(`/quiz?name=${name}`);
   }
 
