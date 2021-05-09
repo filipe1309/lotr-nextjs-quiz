@@ -13,11 +13,10 @@ export default function QuizesDaGalera({ externalDb }) {
 // Run in server
 export async function getServerSideProps(context) {
   const [user, projectName] = context.query.id.split('___');
-  console.log(context.query.id, user, projectName);
   const externalDb = await fetch(`https://${projectName}.${user}.vercel.app/api/db`)
     .then((res) => res.json())
     .then((data) => data)
-    .catch((err) => {
+    .catch(() => {
       // Redirect to home if something fail
       context.res.statusCode = 302;
       context.res.setHeader('Location', '/');
