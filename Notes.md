@@ -35,12 +35,16 @@ yarn add prop-types
 yarn add lottie-react-web
 
 yarn add framer-motion
+
+yarn add jest @testing-library/react @types/jest @testing-library/jest-dom babel-jest @babel/core -D
+yarn add  jest-canvas-mock -D
 ```
 
 ## TO DO
 
-- Ajustar readme
-- Musica de fundo
-- Easter egg (Konami Code) - Gandalf DWIT
-- Trocar gifs esternos por locais
-- desabilitar quizes da galera se não tiver nome na index
+-   Ajustar readme
+-   Musica de fundo
+-   Easter egg (Konami Code) - Gandalf DWIT
+-   Trocar gifs esternos por locais
+-   desabilitar quizes da galera se não tiver nome na index
+-   Tests (jest)
