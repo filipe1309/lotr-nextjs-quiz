@@ -10,7 +10,7 @@
         "test": "jest --runInBand"
     },
     "dependencies": {
-        "framer-motion": "^3.2.2-rc.1",
+        "framer-motion": "^4.1.16",
         "lottie-react-web": "^2.2.2",
         "next": "latest",
         "prop-types": "^15.7.2",
