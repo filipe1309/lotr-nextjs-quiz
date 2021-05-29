@@ -36,6 +36,9 @@ This project wad developed during Alura's "Imersão React Next.js", and used nex
 - [ESlint](https://eslint.org)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Vercel](https://vercel.com/)
+- [Husky](https://github.com/typicode/husky)
+- [CommitLint](https://github.com/conventional-changelog/commitlint)
+- [Commitizen](https://github.com/commitizen/cz-cli)
 
 ## :octocat: Setup
 

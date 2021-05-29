@@ -40,11 +40,70 @@ yarn add jest @testing-library/react @types/jest @testing-library/jest-dom babel
 yarn add  jest-canvas-mock -D
 ```
 
+### Commit
+
+- conventional commit
+- Husky + CommitLint + Commitizen
+- https://github.com/filipe1309/lotr-nextjs-quiz/issues/27
+
+### Installation
+
+##### Husky - Apply lint & interactive commit into `git commit` with _git hooks_.
+
+```sh
+# Install Husky
+yarn add husky -D
+
+# Activate hooks
+yarn husky install
+```
+
+https://github.com/typicode/husky
+
+#### Commitlint - Lint commit messages
+
+```sh
+# Install commitlint cli and conventional config
+yarn add @commitlint/{config-conventional,cli} -D
+
+# Configure commitlint to use conventional config
+echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+
+# Add husky hook
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
+```
+
+https://github.com/conventional-changelog/commitlint
+
+#### Commitizen - Interactive commit
+
+```sh
+# Install Commitizen
+yarn add commitizen -D
+
+# Initialize your project to use the cz-conventional-changelog adapter
+yarn run commitizen init cz-conventional-changelog --yarn --dev --exact
+
+# Add husky hook
+npx husky add .husky/prepare-commit-msg 'exec < /dev/tty && node_modules/.bin/cz --hook || true'
+```
+
+https://github.com/commitizen/cz-cli
+
+#### Then just use `git commit` & **voila**
+
+```sh
+git commit
+```
+
+Source:
+https://www.youtube.com/watch?v=erInHkjxkL8&ab_channel=Rocketseat
+
 ## TO DO
 
--   Ajustar readme
--   Musica de fundo
--   Easter egg (Konami Code) - Gandalf DWIT
--   Trocar gifs esternos por locais
--   desabilitar quizes da galera se não tiver nome na index
--   Tests (jest)
+- Ajustar readme
+- Musica de fundo
+- Easter egg (Konami Code) - Gandalf DWIT
+- Trocar gifs esternos por locais
+- desabilitar quizes da galera se não tiver nome na index
+- Tests (jest)
