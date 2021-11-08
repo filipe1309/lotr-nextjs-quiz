@@ -11,7 +11,7 @@
         "commit": "git-cz"
     },
     "dependencies": {
-        "framer-motion": "^4.1.16",
+        "framer-motion": "^5.2.1",
         "lottie-react-web": "^2.2.2",
         "next": "latest",
         "prop-types": "^15.7.2",
