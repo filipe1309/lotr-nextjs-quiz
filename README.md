@@ -1,10 +1,10 @@
 # <p align="center">🧙 LOTR Quiz</p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/nextjs-v10-black" />
-<img src="https://img.shields.io/badge/reactjs-16.8.0-blue" />
-<img src="https://img.shields.io/badge/Styled--components-5.3.0-orange"/>
-<img src="https://img.shields.io/badge/vercel-passing-green" />
+ <img src="https://img.shields.io/badge/Vercel-passing-green" />
+ <img src="https://img.shields.io/badge/NextJS-v10-black" />
+ <img src="https://img.shields.io/badge/React-16.8.0-blue" />
+ <img src="https://img.shields.io/badge/Styled--components-5.3.0-orange"/>
 </p>
 
 <div align="center">
