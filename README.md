@@ -3,7 +3,7 @@
 <p align="center">
 <img src="https://img.shields.io/badge/nextjs-v10-black" />
 <img src="https://img.shields.io/badge/reactjs-16.8.0-blue" />
-<img src="https://img.shields.io/badge/Styled--component-5.3.0-orange"/>
+<img src="https://img.shields.io/badge/Styled--components-5.3.0-orange"/>
 <img src="https://img.shields.io/badge/vercel-passing-green" />
 </p>
 
